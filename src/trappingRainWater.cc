@@ -4,6 +4,7 @@
 using namespace std;
 
 int trap(const vector<int>& vec){
+    /*
     int maxVol = 0;
     int left = 0;
     int middle,right;
@@ -28,6 +29,27 @@ int trap(const vector<int>& vec){
             break;
         maxVol += sub_vol;
         left = right;
+    }*/
+    int maxVol = 0;
+    int left = 0;
+    int right = vec.size() - 1;
+    int maxLeft = 0, maxRight = 0;
+    while(left < right){
+        if(vec[left] <= vec[right]){
+            if(vec[left] <= maxLeft){
+                maxVol += maxLeft - vec[left];
+            }else{
+                maxLeft = vec[left];
+            }
+            left++;
+        }else{
+            if(vec[right] <= maxRight){
+                maxVol += maxRight - vec[right];
+            }else{
+                maxRight = vec[right];
+            }
+            right--;
+        }
     }
     return maxVol;
 }
