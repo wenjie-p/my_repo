@@ -1,4 +1,4 @@
-<h1>This repo is written to solve the problems on leetcode</h1>
+<h1>This repo is written to solve the problems on algorithms</h1>
 
 </hr>
 
